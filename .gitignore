@@ -1,0 +1,15 @@
+# Created by .ignore support plugin (hsz.mobi)
+target
+.gitignore
+.idea/.gitignore
+.idea/codeStyles/
+.idea/compiler.xml
+.idea/inspectionProfiles/
+.idea/leetcode_practice_for_java.iml
+.idea/libraries/
+.idea/misc.xml
+.idea/modules.xml
+.idea/sonarlint/
+.idea/vcs.xml
+src/test/
+target/
