@@ -28,12 +28,12 @@
 | [64.最小路径和](https://leetcode.cn/problems/minimum-path-sum/)                                                                        | **中等** | **2/3**  | 2023-12-11                 |      |
 | **70**[.](https://leetcode.cn/problems/climbing-stairs/)爬楼梯                                                                   | **简单** | **2/2**  | **2023-11-2**        |      |
 | [72.编辑距离](https://leetcode.cn/problems/edit-distance/)                                                                             | **中等** | **0/2**  | 2023-12-11                 | 背的 |
-| **75.颜色分类**                                                                                                               | **中等** | **2/3**  | **2023-11-2**        |      |
+| **75.颜色分类**                                                                                                               | **中等** | **3/4**  | **2023-12-13**       |      |
 | [78.子集](https://leetcode.cn/problems/subsets/)                                                                                       | **中等** | **3/3**  | **2023-12-12**       |      |
-| [79.单词搜索](https://leetcode.cn/problems/word-search/)                                                                               | **中等** | **2/3**  | **2023-11-2**        |      |
+| [79.单词搜索](https://leetcode.cn/problems/word-search/)                                                                               | **中等** | **3/4**  | **2023-11-2**        |      |
 | [94.二叉树的中序遍历](https://leetcode.cn/problems/binary-tree-inorder-traversal/)                                                     | **简单** | **2/2**  | **2023-11-2**        |      |
 | [96.不同的二叉搜索树](https://leetcode.cn/problems/unique-binary-search-trees/)                                                        | **中等** | **1/4**  | **2023-12-12**       |      |
-| [98.验证二叉搜索树](https://leetcode.cn/problems/validate-binary-search-tree/)                                                         | **中等** | **2/3**  | **2023-11-2**        |      |
+| [98.验证二叉搜索树](https://leetcode.cn/problems/validate-binary-search-tree/)                                                         | **中等** | **3/4**  | **2023-12-13**       |      |
 | [101.对称二叉树](https://leetcode.cn/problems/symmetric-tree/)                                                                         | **简单** | **2/2**  | **2023-11-2**        |      |
 | [102.二叉树的层序遍历](https://leetcode.cn/problems/binary-tree-level-order-traversal/)``                                              | **中等** | **2/2**  | **2023-11-2**        |      |
 | [104.二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/)                                                     | **简单** | **2/2**  | **2023-11-2**        |      |
@@ -46,8 +46,8 @@
 | [136.只出现一次的数字](https://leetcode.cn/problems/single-number/)                                                                    | **简单** | **2/2**  | **2023-11-4**        |      |
 | [139.单词拆分](https://leetcode.cn/problems/word-break/)                                                                               | **中等** | **2/2**  | **2023-11-4**        |      |
 | [141.环形链表](https://leetcode.cn/problems/linked-list-cycle/)                                                                        | **简单** | **2/2**  | **2023-11-4**        |      |
-| [142.环形链表 II](https://leetcode.cn/problems/linked-list-cycle-ii/)                                                                  | **中等** | **2/3**  | **2023-11-4**        |      |
-| [146.LRU 缓存](https://leetcode.cn/problems/lru-cache/)                                                                                | **中等** | **1/2**  | **2023-11-4**        |      |
+| [142.环形链表 II](https://leetcode.cn/problems/linked-list-cycle-ii/)                                                                  | **中等** | **2/4**  | **2023-12-13**       |      |
+| [146.LRU 缓存](https://leetcode.cn/problems/lru-cache/)                                                                                | **中等** | **2/3**  | **2023-12-13**       |      |
 | **160.相交链表**                                                                                                              | **简单** | **2/3**  | **2023-11-4**        |      |
 | [169.多数元素](https://leetcode.cn/problems/majority-element/)                                                                         | **简单** | **2/2**  | **2023-11-5**        |      |
 | [206.反转链表](https://leetcode.cn/problems/reverse-linked-list/)                                                                      | **简单** | **2/2**  | **2023-11-5**        |      |
