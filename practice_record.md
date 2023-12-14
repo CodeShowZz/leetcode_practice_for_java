@@ -35,13 +35,13 @@
 | [96.不同的二叉搜索树](https://leetcode.cn/problems/unique-binary-search-trees/)                                                        | **中等** | **1/4**  | **2023-12-12**       |      |
 | [98.验证二叉搜索树](https://leetcode.cn/problems/validate-binary-search-tree/)                                                         | **中等** | **3/4**  | **2023-12-13**       |      |
 | [101.对称二叉树](https://leetcode.cn/problems/symmetric-tree/)                                                                         | **简单** | **2/2**  | **2023-11-2**        |      |
-| [102.二叉树的层序遍历](https://leetcode.cn/problems/binary-tree-level-order-traversal/)                                                | **中等** | **3/3**  | **2023-11-2**        |      |
+| [102.二叉树的层序遍历](https://leetcode.cn/problems/binary-tree-level-order-traversal/)                                                | **中等** | **3/3**  | **2023-12-14**       |      |
 | [104.二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/)                                                     | **简单** | **2/2**  | **2023-11-2**        |      |
 | [105.从前序与中序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)          | **中等** | **2/3**  | **2023-11-2**        |      |
 | [108.将有序数组转换为二叉搜索树](https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/)                             | **中等** | **2/3**  | **2023-11-3**        |      |
 | [114.二叉树展开为链表](https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/)                                               | **中等** | **3/4**  | **2023-12-14**       |      |
 | [118.杨辉三角](https://leetcode.cn/problems/pascals-triangle/)                                                                         | **简单** | **2/3**  | **2023-11-3**        |      |
-| [121.买卖股票的最佳时机](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/)                                                | **简单** | **2/2**  | **2023-11-3**        |      |
+| [121.买卖股票的最佳时机](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/)                                                | **简单** | **3/3**  | **2023-12-14**       |      |
 | [128.最长连续序列](https://leetcode.cn/problems/longest-consecutive-sequence/)                                                         | **中等** | **2/4**  | **2023-12-14**       |      |
 | [136.只出现一次的数字](https://leetcode.cn/problems/single-number/)                                                                    | **简单** | **2/2**  | **2023-11-4**        |      |
 | [139.单词拆分](https://leetcode.cn/problems/word-break/)                                                                               | **中等** | **2/3**  | **2023-12-14**       |      |
