@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.simple;
 
 /**
  * @description: 示例 2：
