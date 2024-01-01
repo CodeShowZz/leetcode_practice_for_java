@@ -25,23 +25,18 @@ public class DailyTemperatures_739 {
         if (temperatures == null || temperatures.length == 0) {
             return temperatures;
         }
-        LinkedList<Integer> temperaturesStack = new LinkedList<>();
-        int len = temperatures.length;
-        int []res= new int[len];
-        for (int i = 0; i < len; i++) {
-            if (temperaturesStack.size() == 0) {
-                temperaturesStack.push(i);
+        LinkedList<Integer> stack = new LinkedList<>();
+        int [] res = new int[temperatures.length];
+        for(int i = 0 ; i < temperatures.length;i++) {
+            if(stack.isEmpty()) {
+                stack.push(i);
             } else {
-                while (temperaturesStack.size() != 0) {
-                    int peek = temperaturesStack.peek();
-                    if (temperatures[i] > temperatures[peek]) {
-                        int index = temperaturesStack.pop();
-                        res[index] = i - peek;
-                    } else {
-                        break;
-                    }
+                while(!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()]) {
+                    int index = stack.peek();
+                    res[index] = i - index;
+                    stack.pop();
                 }
-                temperaturesStack.push(i);
+                stack.push(i);
             }
         }
         return res;
