@@ -19,30 +19,35 @@ package com.leetcode.middle;
  * rorse -> rose (删除 'r')
  * rose -> ros (删除 'e')
  * @author: Linhuang
- * @date: 2023-12-11 15:50
+ * @date: 2024-1-2 21.34
  */
 public class MinDistance_72 {
 
     public int minDistance(String word1, String word2) {
-        int row = word1.length() + 1;
-        int column = word2.length() + 1;
-        int[][] dp = new int[row][column];
-        dp[0][0] = 0;
-        for (int j = 1; j < column; j++) {
-            dp[0][j] = dp[0][j - 1] + 1;
+        int len1 = word1.length();
+        int len2 = word2.length();
+        if (len1 == 0 || word2.length() == 0) {
+            return len1 == 0 ? len2 : len1;
         }
+        int row = len1 + 1;
+        int column = len2 + 1;
+        int[][] res = new int[row][column];
+        res[0][0] = 0;
         for (int i = 1; i < row; i++) {
-            dp[i][0] = dp[i - 1][0] + 1;
+            res[i][0] = res[i - 1][0] + 1;
+        }
+        for (int i = 1; i < column; i++) {
+            res[0][i] = res[0][i - 1] + 1;
         }
         for (int i = 1; i < row; i++) {
             for (int j = 1; j < column; j++) {
                 if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
-                    dp[i][j] = dp[i - 1][j - 1];
+                    res[i][j] = res[i - 1][j - 1];
                 } else {
-                    dp[i][j] = Math.min(Math.min(dp[i - 1][j], dp[i][j - 1]), dp[i - 1][j - 1]) + 1;
+                    res[i][j] = Math.min(Math.min(res[i - 1][j], res[i][j - 1]), res[i - 1][j - 1]) + 1;
                 }
             }
         }
-        return dp[row-1][column-1];
+        return res[row - 1][column - 1];
     }
 }

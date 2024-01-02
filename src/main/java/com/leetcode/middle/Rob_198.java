@@ -2,21 +2,20 @@ package com.leetcode.middle;
 
 /**
  * @author lin
- * @date 2023/12/20 23:05
- **/
+ * @date 2024/1/2 23:59
+ */
 public class Rob_198 {
 
     public int rob(int[] nums) {
-        if(nums == null || nums.length == 0) {
-            return 0;
+        int max = nums[0];
+        int len = nums.length;
+        int[][] dp = new int[len][2];
+        dp[0][0] = nums[0];
+        dp[0][1] = 0;
+        for (int i = 1; i < len; i++) {
+             dp[i][0] = Math.max(dp[i-1][1] + nums[i],dp[i-1][0]);
+             dp[i][1] = dp[i-1][0];
         }
-        int n = nums.length;
-        int [] dp = new int[n+1];
-        dp[0] = 0;
-        dp[1] = nums[0];
-        for(int k = 2;k <=n;k++) {
-            dp[k] = Math.max(dp[k-1],nums[k-1] + dp[k-2]);
-        }
-        return dp[n];
+        return dp[len-1][1];
     }
 }

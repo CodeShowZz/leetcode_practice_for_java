@@ -3,25 +3,25 @@ package com.leetcode.middle;
 
 /**
  * @author lin
- * @date 2023/12/20 22:58
+ * @date 2024/1/2 22.07
  **/
 public class MaxProduct_152 {
 
     public int maxProduct(int[] nums) {
-        if (nums == null || nums.length == 0) {
-            return 0;
-        }
-        int max = Integer.MIN_VALUE;
-        int tempMin = 1;
-        int tempMax = 1;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] < 0) {
-                int temp = tempMax;
-                tempMax = tempMin;
-                tempMin = temp;
+        int len = nums.length;
+        int[][] dp = new int[len][2];
+        dp[0][0] = nums[0];
+        dp[0][1] = nums[0];
+        int max = dp[0][0];
+        for (int i = 1; i < len; i++) {
+            if (nums[i] > 0) {
+                dp[i][0] = Math.max(dp[i - 1][0] * nums[i], nums[i]);
+                dp[i][1] = Math.min(dp[i - 1][1] * nums[i], nums[i]);
+            } else {
+                dp[i][0] = Math.max(dp[i - 1][1] * nums[i], nums[i]);
+                dp[i][1] = Math.min(dp[i - 1][0] * nums[i], nums[i]);
             }
-            tempMax = Math.max(tempMax, tempMax * nums[i]);
-            tempMin = Math.min(tempMin, tempMin * nums[i]);
+            max = Math.max(max, dp[i][0]);
         }
         return max;
     }
