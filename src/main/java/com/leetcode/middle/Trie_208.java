@@ -2,25 +2,22 @@ package com.leetcode.middle;/**
  *
  * @description:
  * @author: Linhuang
- * @date: 2023-12-27 17:25
+ * @date: 2024-01-03 15:00
  */
 public class Trie_208 {
 
     private Trie_208 [] children;
-
     private boolean isEnd;
 
     public Trie_208() {
-        this.children = new Trie_208[26];
+        children = new Trie_208[26];
         isEnd = false;
     }
 
     public void insert(String word) {
-        if(word == null || word.length() == 0) {
-            return;
-        }
+        int len  = word.length();
         Trie_208 node = this;
-        for(int i = 0;i<word.length();i++) {
+        for(int i = 0 ; i < len;i++) {
             int index = word.charAt(i) - 'a';
             if(node.children[index] == null) {
                 node.children[index] = new Trie_208();
@@ -40,18 +37,16 @@ public class Trie_208 {
     }
 
     public Trie_208 searchNode(String word) {
-        if(word == null || word.length() == 0) {
-            return null;
-        }
+        int len  = word.length();
         Trie_208 node = this;
-        for(int i = 0;i<word.length();i++) {
+        for(int i = 0 ; i < len;i++) {
             int index = word.charAt(i) - 'a';
             if(node.children[index] == null) {
                 return null;
             }
             node = node.children[index];
         }
-        return node;
+         return node;
     }
 
 }
