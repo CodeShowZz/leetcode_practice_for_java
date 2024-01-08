@@ -1,24 +1,25 @@
-package com.leetcode.middle;/**
- *
+package com.leetcode.middle;
+
+/**
  * @description:
  * @author: Linhuang
  * @date: 2024-01-03 15:00
  */
 public class Trie_208 {
 
-    private Trie_208 [] children;
+    private Trie_208[] children;
+
     private boolean isEnd;
 
     public Trie_208() {
-        children = new Trie_208[26];
-        isEnd = false;
+        this.children = new Trie_208[26];
     }
 
-    public void insert(String word) {
-        int len  = word.length();
+    public void insert(String str) {
         Trie_208 node = this;
-        for(int i = 0 ; i < len;i++) {
-            int index = word.charAt(i) - 'a';
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            int index = ch - 'a';
             if(node.children[index] == null) {
                 node.children[index] = new Trie_208();
             }
@@ -27,26 +28,27 @@ public class Trie_208 {
         node.isEnd = true;
     }
 
-    public boolean search(String word) {
+    private boolean search(String word) {
         Trie_208 node = searchNode(word);
         return node != null && node.isEnd;
     }
 
-    public boolean startsWith(String prefix) {
+    private boolean startsWith(String prefix) {
         return searchNode(prefix) != null;
     }
 
-    public Trie_208 searchNode(String word) {
-        int len  = word.length();
+    private Trie_208 searchNode(String word) {
         Trie_208 node = this;
-        for(int i = 0 ; i < len;i++) {
-            int index = word.charAt(i) - 'a';
+        for (int i = 0; i < word.length(); i++) {
+            char ch = word.charAt(i);
+            int index = ch - 'a';
             if(node.children[index] == null) {
-                return null;
+               return null;
             }
             node = node.children[index];
         }
-         return node;
+        return node;
     }
+
 
 }
