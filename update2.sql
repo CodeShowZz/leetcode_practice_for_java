@@ -26,3 +26,28 @@ update problem_record
 set try_times = try_times  + 1,success_times = success_times  + 1
 where id = 打家劫舍337
 
+update problem_record
+set try_times = try_times  + 1,success_times = success_times  + 1
+where id = 36
+
+update problem_record
+set try_times = try_times  + 1,success_times = success_times  + 1
+where id = 128
+
+update problem_record
+set try_times = try_times  + 1
+where id = 路径总和
+
+update problem_record
+set try_times = try_times  + 1,success_times = success_times  + 1
+where id = 59
+
+update problem_record
+set try_times = try_times  + 1,success_times = success_times  + 1
+where id = 152
+
+update problem_record
+set try_times = try_times  + 1,success_times = success_times  + 1
+where id = 127
+
+
