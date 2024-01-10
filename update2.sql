@@ -51,3 +51,8 @@ set try_times = try_times  + 1,success_times = success_times  + 1
 where id = 127
 
 
+update problem_record
+set try_times = try_times  + 1,success_times = success_times  + 1
+where id = 138
+
+
