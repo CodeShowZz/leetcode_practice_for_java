@@ -1,61 +1,58 @@
 package com.leetcode.middle;
 
+import java.nio.IntBuffer;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * @description:
  * @author: Linhuang
- * @date: 2023-12-26 16:29
+ * @date: 2024-01-03 14:38
  */
 public class CanFinish_207 {
 
-    List<List<Integer>> edges;
-    int [] visited;
-    boolean valid = true;
-
+    private List<List<Integer>> edges = new ArrayList<>();
+    private boolean valid = true;
 
     public boolean canFinish(int numCourses, int[][] prerequisites) {
-        edges = new ArrayList<>();
-        visited = new int[numCourses];
-        for(int i = 0 ; i <  numCourses;i++) {
+        for (int i = 0; i < numCourses; i++) {
             edges.add(new ArrayList<>());
         }
-        for(int [] prerequisite : prerequisites) {
-            edges.get(prerequisite[1]).add(prerequisite[0]);
+        for (int[] edge : prerequisites) {
+            edges.get(edge[1]).add(edge[0]);
         }
-        for(int i = 0;i<numCourses;i++) {
-            if(!valid) {
+        int[] visited = new int[numCourses];
+        for (int i = 0; i < numCourses; i++) {
+            if (!valid) {
                 return false;
             }
-            if(visited[i] == 0) {
-                dfs(i);
-            }
+            dfs(i, visited);
         }
-        return true;
+        return valid;
     }
 
-    public void dfs(int u) {
-        visited[u] = 1;
-        for(int v : edges.get(u)) {
-            if(visited[v] == 0) {
-                dfs(v);
+    public void dfs(int v, int[] visited) {
+        visited[v] = 1;
+        List<Integer> prerequisites = edges.get(v);
+        for (int prerequisite : prerequisites) {
+            if (visited[prerequisite] == 0) {
+                dfs(prerequisite,visited);
                 if(!valid) {
                     return;
                 }
-            } else if(visited[v] == 1) {
+            } else if (visited[prerequisite] == 1) {
                 valid = false;
                 return;
             }
         }
-        visited[u] = 2;
+        visited[v] = 2;
     }
 
 
     public static void main(String[] args) {
         int numCourse = 7;
-        int [][] prerequisites =  {{2,0},{5,0}, {4,0},{0,1},{2,1},{5,3},{4,5},{6,5}};
-        boolean valid = new CanFinish_207().canFinish(numCourse,prerequisites);
+        int[][] prerequisites = {{2, 0}, {5, 0}, {4, 0}, {0, 1}, {2, 1}, {5, 3}, {4, 5}, {6, 5}};
+        boolean valid = new CanFinish_207().canFinish(numCourse, prerequisites);
         System.out.println("valid:" + valid);
     }
 }

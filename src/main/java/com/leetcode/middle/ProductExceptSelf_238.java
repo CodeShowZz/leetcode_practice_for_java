@@ -2,26 +2,28 @@ package com.leetcode.middle;
 
 /**
  * @author lin
- * @date 2023/12/30 2:08
+ * @date 2024/01/03 15:54
  **/
 public class ProductExceptSelf_238 {
 
     public int[] productExceptSelf(int[] nums) {
-        if(nums == null || nums.length == 0) {
-            return nums;
-        }
         int len = nums.length;
-        int [] res = new int[len];
-        int k = 1;
-        for(int i = 0 ; i < len;i++ ) {
-            res[i] = k;
-            k = k * nums[i];
+        int[] res = new int[len];
+        int current = 1;
+        for (int i = 0; i < len; i++) {
+            res[i] = current;
+            current = current * nums[i];
         }
-        k = 1;
-        for(int i = len-1;i>=0;i--) {
-            res[i] = res[i] * k;
-            k = k * nums[i];
+        current = 1;
+        for (int i = len - 1; i >= 0; i--) {
+            res[i] = res[i] * current;
+            current = current * nums[i];
         }
-        return  res;
+        return res;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3, 4};
+        new ProductExceptSelf_238().productExceptSelf(nums);
     }
 }

@@ -11,15 +11,15 @@ public class SearchMatrix_240 {
         int row = matrix.length;
         int column = matrix[0].length;
         int x = 0;
-        int y = column - 1;
-        while (x < row && y >= 0) {
-            if (matrix[x][y] == target) {
+        int y = column-1;
+        while(x < row && y>=0) {
+            int current = matrix[x][y];
+            if(current == target) {
                 return true;
-            }
-            if (matrix[x][y] > target) {
-                --y;
-            } else {
-                ++x;
+            } else if(current < target) {
+                x++;
+            } else if(current > target) {
+                y--;
             }
         }
         return false;

@@ -2,29 +2,30 @@ package com.leetcode.middle;
 
 /**
  * @author lin
- * @date 2024/1/1 17:55
+ * @date 2024/01/04 10:33
  **/
 public class MaxProfit_309 {
 
     public int maxProfit(int[] prices) {
-        if(prices == null || prices.length == 0) {
+        int len = prices.length;
+        if (len == 1) {
             return 0;
         }
-        int len = prices.length;
-        int [][] res = new int[len][3];
-        res[0][0] = -prices[0];
-        res[0][1] = 0;
-        res[0][2] = 0;
-        for(int i = 1;i< len;i++) {
-            res[i][0] = Math.max(res[i-1][0],res[i-1][2] - prices[i]);
-            res[i][1] = Math.max(Math.max(res[i-1][1],res[i-1][2]),res[i-1][0] + prices[i]);
-            res[i][2] = Math.max(res[i-1][1],res[i-1][2]);
+        int[][] dp = new int[len][3];
+        dp[0][0] = -prices[0];
+        dp[0][1] = 0;
+        dp[0][2] = 0;
+        for (int i = 1; i < len; i++) {
+            int price = prices[i];
+            dp[i][0] = Math.max(dp[i - 1][0], dp[i - 1][2] - price);
+            dp[i][1] = Math.max(dp[i - 1][1], dp[i - 1][0] + price);
+            dp[i][2] = dp[i - 1][1];
         }
-        return Math.max(res[prices.length-1][1],res[prices.length-1][2]);
+        return dp[len-1][1];
     }
 
     public static void main(String[] args) {
-        int [] prices = {1,2,3,0,2};
+        int[] prices = {1, 2, 3, 0, 2};
         int res = new MaxProfit_309().maxProfit(prices);
         System.out.println(res);
     }
