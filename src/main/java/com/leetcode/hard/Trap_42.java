@@ -1,4 +1,4 @@
-package com.leetcode.middle;
+package com.leetcode.hard;
 
 /**
  * @description:
