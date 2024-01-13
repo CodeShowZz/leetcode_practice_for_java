@@ -26,28 +26,30 @@ public class MinDistance_72 {
     public int minDistance(String word1, String word2) {
         int len1 = word1.length();
         int len2 = word2.length();
-        if (len1 == 0 || word2.length() == 0) {
+        if(len1 == 0 || len2 == 0) {
             return len1 == 0 ? len2 : len1;
         }
         int row = len1 + 1;
-        int column = len2 + 1;
-        int[][] res = new int[row][column];
-        res[0][0] = 0;
-        for (int i = 1; i < row; i++) {
-            res[i][0] = res[i - 1][0] + 1;
-        }
-        for (int i = 1; i < column; i++) {
-            res[0][i] = res[0][i - 1] + 1;
-        }
-        for (int i = 1; i < row; i++) {
-            for (int j = 1; j < column; j++) {
-                if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
-                    res[i][j] = res[i - 1][j - 1];
-                } else {
-                    res[i][j] = Math.min(Math.min(res[i - 1][j], res[i][j - 1]), res[i - 1][j - 1]) + 1;
+        int column = len2 +1;
+        int [][] res =new int[row][column];
+
+        for(int i = 0; i < row;i++) {
+            for(int j = 0 ; j < column;j++) {
+                if(i == 0 && j == 0) {
+                    res[i][j] = 0;
+                } else if(i == 0) {
+                    res[i][j] = res[i][j-1] +1;
+                } else if(j == 0) {
+                    res[i][j] = res[i-1][j] + 1;
+                } else if(i != 0 && j != 0) {
+                    if(word1.charAt(i-1) == word2.charAt(j-1)) {
+                        res[i][j] = res[i-1][j-1];
+                    } else {
+                        res[i][j] =  Math.min(Math.min(res[i-1][j-1],res[i][j-1]),res[i-1][j]) + 1;
+                    }
                 }
             }
         }
-        return res[row - 1][column - 1];
+        return res[row-1][column-1];
     }
 }

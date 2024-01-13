@@ -16,21 +16,25 @@ import java.util.Map;
 public class LengthOfLongestSubstring_3 {
 
     public int lengthOfLongestSubstring(String s) {
-        if (s == null || s.length() == 0) {
+        if (s.length() == 0) {
             return 0;
         }
-        Map<Character, Integer> charToIndexMap = new HashMap<>();
-        int len = s.length();
-        int maxLen = 0;
+        Map<Character, Integer> chToIndexMap = new HashMap<>();
         int left = 0;
-        for (int i = 0; i < len; i++) {
+        int max = 0;
+        for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
-            if(charToIndexMap.get(ch) != null) {
-                left = Math.max(left,charToIndexMap.get(ch)+1);
+            if (chToIndexMap.get(ch) != null) {
+                left = Math.max(left, chToIndexMap.get(ch) + 1);
             }
-            maxLen = Math.max(maxLen,(i - left) + 1);
-            charToIndexMap.put(ch,i);
+            chToIndexMap.put(ch,i);
+            max = Math.max(i - left + 1, max);
         }
-        return maxLen;
+        return max;
+    }
+
+    public static void main(String[] args) {
+        String s = "abcabcbb";
+        new LengthOfLongestSubstring_3().lengthOfLongestSubstring(s);
     }
 }

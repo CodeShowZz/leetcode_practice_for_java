@@ -13,26 +13,23 @@ import java.util.Map;
 public class PathSum_437 {
 
     public int pathSum(TreeNode root, long sum) {
-        if (root == null) {
-            return 0;
-        }
-        int res = dfs(root,sum);
-        res = res + pathSum(root.left,sum);
-        res = res + pathSum(root.right,sum);
-        return res;
+        Map<Long, Integer> sumToCountMap = new HashMap<>();
+        sumToCountMap.put(0L,1);
+        return dfs(root,sum,0,sumToCountMap);
     }
 
-    public int dfs(TreeNode root, long target) {
+    public int dfs(TreeNode root, long target, long currentSum, Map<Long, Integer> sumToCountMap) {
         if (root == null) {
             return 0;
         }
-        int res = 0;
         int val = root.val;
-        if (val == target) {
-            res = res + 1;
-        }
-        res = res + dfs(root.left,target-val);
-        res = res + dfs(root.right,target-val);
+        int res = 0;
+        currentSum = currentSum + val;
+        res = res + sumToCountMap.getOrDefault(currentSum-target,0);
+        sumToCountMap.put(currentSum, sumToCountMap.getOrDefault(currentSum, 0) + 1);
+        res = res + dfs(root.left, target, currentSum,sumToCountMap);
+        res = res + dfs(root.right,target,currentSum,sumToCountMap);
+        sumToCountMap.put(currentSum,sumToCountMap.get(currentSum) - 1);
         return res;
     }
 
