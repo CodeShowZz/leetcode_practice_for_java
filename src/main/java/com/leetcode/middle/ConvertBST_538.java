@@ -10,7 +10,8 @@ import com.leetcode.model.TreeNode;
  */
 public class ConvertBST_538 {
 
-    private int currentSum;
+    private int sum = 0;
+
 
     public TreeNode convertBST(TreeNode root) {
         dfs(root);
@@ -22,9 +23,10 @@ public class ConvertBST_538 {
             return;
         }
         dfs(root.right);
-        currentSum = currentSum + root.val;
-        root.val = currentSum;
+        sum = sum + root.val;
+        root.val = sum;
         dfs(root.left);
     }
+
 }
 

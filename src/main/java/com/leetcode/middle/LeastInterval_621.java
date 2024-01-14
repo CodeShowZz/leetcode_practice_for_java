@@ -10,19 +10,20 @@ import java.util.*;
 public class LeastInterval_621 {
 
     public int leastInterval(char[] tasks, int n) {
-        int[] temp = new int[26];
-        int count = 0;
-        int max = 0;
-        for (char c : tasks) {
-            temp[c - 'A']++;
-            max = Math.max(temp[c - 'A'], max);
+        int[] taskCountArr = new int[26];
+        int maxCount = 0 ;
+        int maxCountNum = 0;
+        for(char task : tasks) {
+            int index = task-'A';
+            taskCountArr[index] = taskCountArr[index] + 1;
+            maxCount = Math.max(maxCount,taskCountArr[index]);
         }
-        for (int i = 0; i < 26; i++) {
-            if (temp[i] == max) {
-                count++;
+        for(int taskCount : taskCountArr) {
+            if(taskCount == maxCount) {
+                maxCountNum = maxCountNum + 1;
             }
         }
-        return Math.max(tasks.length, (max - 1) * (n + 1) + count);
+        return Math.max(tasks.length,(maxCount-1) * (n+1) + maxCountNum);
     }
 
     public static void main(String[] args) {

@@ -9,27 +9,29 @@ public class FindUnsortedSubarray_581 {
 
     public int findUnsortedSubarray(int[] nums) {
         int len = nums.length;
-        int left = -1;
-        int right = -1;
         int max = Integer.MIN_VALUE;
-        int min = Integer.MAX_VALUE;
+        int right = -1;
         for (int i = 0; i < len; i++) {
-            if(max > nums[i]) {
-                right = i;
-            } else {
+            if (nums[i] >= max) {
                 max = nums[i];
-            }
-            if(min < nums[len-i-1]) {
-                left = len-i-1;
             } else {
-                min = nums[len-i-1];
+                right = i;
             }
         }
-        return right == -1 ? 0 : right - left + 1;
+        int min = Integer.MAX_VALUE;
+        int left = -1;
+        for(int i = len-1;i>=0;i--) {
+            if(nums[i] <= min) {
+                min = nums[i];
+            } else {
+                left = i;
+            }
+        }
+        return left == -1 ? 0 : right - left + 1;
     }
 
     public static void main(String[] args) {
-        int [] nums = {2,6,4,8,10,9,15};
+        int[] nums = {1,2,3,3,3};
         int res = new FindUnsortedSubarray_581().findUnsortedSubarray(nums);
         System.out.println(res);
     }

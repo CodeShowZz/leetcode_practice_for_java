@@ -10,27 +10,29 @@ import java.util.List;
  */
 public class FindTargetSumWays_494 {
 
+
     private int count = 0;
 
     public int findTargetSumWays(int[] nums, int target) {
-        dfs(0, nums, 0, target);
+        dfs(nums, target,0);
         return count;
     }
 
-    public void dfs(int index, int[] nums, int sum, int target) {
-        if (index == nums.length) {
-            if (sum == target) {
+    public void dfs(int[] nums, int sum,int index) {
+        if(index == nums.length) {
+            if(sum == 0) {
                 count++;
             }
             return;
         }
-        dfs(index + 1, nums, sum + nums[index], target);
-        dfs(index + 1, nums, sum - nums[index], target);
+        dfs(nums,sum - nums[index],index+1);
+        dfs(nums,sum + nums[index],index+1);
     }
+
 
     public static void main(String[] args) {
         int[] nums = {1, 1, 1, 1, 1};
-        int count = new FindTargetSumWays_494().findTargetSumWays(nums,3);
+        int count = new FindTargetSumWays_494().findTargetSumWays(nums, 3);
         System.out.println(count);
     }
 }

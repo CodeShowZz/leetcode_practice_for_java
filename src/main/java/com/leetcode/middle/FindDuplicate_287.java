@@ -12,18 +12,18 @@ package com.leetcode.middle;
 public class FindDuplicate_287 {
 
     public int findDuplicate(int[] nums) {
-        int len = nums.length; // n + 1 = len, n = len - 1
+        int len = nums.length;
         int left = 0;
-        int right = len - 1;
-        while (left < right) {
+        int right = len-1;
+        while(left < right) {
             int mid = (left + right) / 2;
             int count = 0;
-            for (int num : nums) {
-                if(num <= mid) {
+            for(int num : nums) {
+                if(num<=mid) {
                     count++;
                 }
             }
-            if (count > mid) {
+            if(count > mid) {
                 right = mid;
             } else {
                 left = mid + 1;
