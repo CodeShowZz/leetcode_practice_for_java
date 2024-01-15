@@ -14,12 +14,12 @@ public class FindDuplicate_287 {
     public int findDuplicate(int[] nums) {
         int len = nums.length;
         int left = 0;
-        int right = len-1;
+        int right = len - 1;
         while(left < right) {
             int mid = (left + right) / 2;
             int count = 0;
             for(int num : nums) {
-                if(num<=mid) {
+                if(num <= mid) {
                     count++;
                 }
             }
@@ -33,7 +33,7 @@ public class FindDuplicate_287 {
     }
 
     public static void main(String[] args) {
-        int [] nums = {3,4,2,1,1};
+        int[] nums = {3, 4, 2, 1, 1};
         new FindDuplicate_287().findDuplicate(nums);
     }
 }

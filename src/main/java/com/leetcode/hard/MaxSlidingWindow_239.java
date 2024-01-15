@@ -5,24 +5,24 @@ import java.util.*;
 /**
  * @description:
  * @author: Linhuang
- * @date: 2024-01-12 14:42
+ * @date: 2024-01-15 14:19
  */
 public class MaxSlidingWindow_239 {
 
     public int[] maxSlidingWindow(int[] nums, int k) {
-        PriorityQueue<int[]> pq = new PriorityQueue((Comparator<int[]>) (o1, o2) -> o1[0] != o2[0] ? o2[0] - o1[0] : o2[1] - o1[1]);
-        int len = nums.length;
-        int []res = new int[len-k+1];
+        PriorityQueue<int[]> priorityQueue = new PriorityQueue((Comparator<int[]>) (o1, o2) -> o1[0] != o2[0] ? o2[0] - o1[0] : o2[1] - o1[1]);
         for (int i = 0; i < k; i++) {
-            pq.add(new int[]{nums[i], i});
+             priorityQueue.add(new int[]{nums[i],i});
         }
-        res[0] = pq.peek()[0];
-        for (int i = k; i < len; i++) {
-            pq.add(new int[]{nums[i], i});
-            if (i - k >= pq.peek()[1]) {
-                pq.poll();
+        int len = nums.length;
+        int [] res = new int[len-k+1];
+        res[0] = priorityQueue.peek()[0];
+        for(int i = k ; i < len ; i++) {
+            while(priorityQueue.size() != 0 && priorityQueue.peek()[1] <= i-k) {
+                priorityQueue.poll();
             }
-            res[i-k+1] = pq.peek()[0];
+            priorityQueue.add(new int[]{nums[i],i});
+            res[i-k+1] = priorityQueue.peek()[0];
         }
         return res;
     }

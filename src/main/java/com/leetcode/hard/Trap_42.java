@@ -9,19 +9,20 @@ public class Trap_42 {
 
     public int trap(int[] height) {
         int len = height.length;
-        int[] lMax = new int[len];
-        int[] rMax = new int[len];
-        lMax[0] = 0;
-        rMax[len - 1] = 0;
-        for (int i = 1; i < len; i++) {
-            lMax[i] = Math.max(lMax[i - 1], height[i - 1]);
-            rMax[len - 1 - i] = Math.max(rMax[len - i], height[len - i]);
+        int [] lMax = new int[len];
+        int [] rMax = new int[len];
+        int lTempMax = 0;
+        int rTempMax = 0;
+        int count = 0;
+        for(int i = 0;i < len;i++) {
+            lMax[i] = lTempMax;
+            lTempMax = Math.max(lTempMax,height[i]);
+            rMax[len-i-1] = rTempMax;
+            rTempMax = Math.max(rTempMax,height[len-i-1]);
         }
-
-        int sum = 0;
-        for (int i = 0; i < height.length; i++) {
-            sum += Math.max(Math.min(lMax[i], rMax[i]) - height[i], 0);
+        for(int i = 0;i< len;i++) {
+            count = count + Math.max(Math.min(lMax[i],rMax[i]) - height[i],0);
         }
-        return sum;
+        return count;
     }
 }
