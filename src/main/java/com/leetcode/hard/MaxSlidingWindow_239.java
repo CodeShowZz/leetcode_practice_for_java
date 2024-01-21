@@ -10,18 +10,18 @@ import java.util.*;
 public class MaxSlidingWindow_239 {
 
     public int[] maxSlidingWindow(int[] nums, int k) {
-        PriorityQueue<int[]> priorityQueue = new PriorityQueue((Comparator<int[]>) (o1, o2) -> o1[0] != o2[0] ? o2[0] - o1[0] : o2[1] - o1[1]);
-        for (int i = 0; i < k; i++) {
-             priorityQueue.add(new int[]{nums[i],i});
-        }
         int len = nums.length;
         int [] res = new int[len-k+1];
+        PriorityQueue<int[]> priorityQueue = new PriorityQueue((Comparator<int[]>) (o1, o2) -> o1[0] != o2[0] ? o2[0] - o1[0] : o2[1] - o1[1]);
+        for (int i = 0; i < k; i++) {
+            priorityQueue.add(new int[]{nums[i],i});
+        }
         res[0] = priorityQueue.peek()[0];
-        for(int i = k ; i < len ; i++) {
-            while(priorityQueue.size() != 0 && priorityQueue.peek()[1] <= i-k) {
+        for (int i = k; i < len; i++) {
+            while (!priorityQueue.isEmpty() && priorityQueue.peek()[1] <= i - k) {
                 priorityQueue.poll();
             }
-            priorityQueue.add(new int[]{nums[i],i});
+            priorityQueue.add(new int[]{nums[i], i});
             res[i-k+1] = priorityQueue.peek()[0];
         }
         return res;

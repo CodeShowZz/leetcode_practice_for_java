@@ -6,19 +6,19 @@ import java.util.Map;
 /**
  * @description:
  * @author: Linhuang
- * @date: 2024-01-11 11:30
+ * @date: 2024-01-20 1:02
  */
 public class SubarraySum_560 {
 
     public int subarraySum(int[] nums, int k) {
-        Map<Integer, Integer> sumToCountMap = new HashMap<>();
-        sumToCountMap.put(0, 1);
+        Map<Integer,Integer> sumToCountMap = new HashMap<>();
+        sumToCountMap.put(0,1);
         int count = 0;
         int sum = 0;
-        for (int num : nums) {
+        for(int num : nums) {
             sum = sum + num;
-            if (sumToCountMap.get(sum - k) != null) {
-                count = count + sumToCountMap.get(sum - k);
+            if(sumToCountMap.get(sum - k) != null) {
+                count = count + sumToCountMap.get(sum-k);
             }
             sumToCountMap.put(sum,sumToCountMap.getOrDefault(sum,0) + 1);
         }

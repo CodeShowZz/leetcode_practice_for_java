@@ -9,50 +9,51 @@ import java.util.Arrays;
  */
 public class MergeSort {
 
-    public static void mergeSort(int[] nums, int left, int right) {
+    public static void mergeSort(int[] arr, int left, int right) {
         if (left < right) {
             int mid = (left + right) / 2;
-            mergeSort(nums, left, mid);
-            mergeSort(nums, mid + 1, right);
-            merge(nums, left, mid, right);
+            mergeSort(arr, left, mid);
+            mergeSort(arr, mid + 1, right);
+            merge(arr, left, mid, right);
         }
     }
 
-    public static void merge(int[] nums, int left, int mid, int right) {
+    public static void merge(int[] arr, int left, int mid, int right) {
         int leftLen = mid - left + 1;
         int rightLen = right - mid;
         int[] leftArr = new int[leftLen];
         for (int i = 0; i < leftLen; i++) {
-            leftArr[i] = nums[left + i];
+            leftArr[i] = arr[left + i];
         }
         int[] rightArr = new int[rightLen];
         for (int i = 0; i < rightLen; i++) {
-            rightArr[i] = nums[mid + i + 1];
+            rightArr[i] = arr[mid + i + 1];
         }
-        int i = 0;
-        int j = 0;
+        int l = 0;
+        int r = 0;
         int k = left;
-        while (i < leftLen && j < rightLen) {
-            if (leftArr[i] > rightArr[j]) {
-                nums[k] = rightArr[j];
-                j++;
+        while(l < leftLen && r < rightLen) {
+            if(leftArr[l] > rightArr[r]) {
+                arr[k] = rightArr[r];
+                r++;
             } else {
-                nums[k] = leftArr[i];
-                i++;
+                arr[k] = leftArr[l];
+                l++;
             }
             k++;
         }
-        while (i < leftLen) {
-            nums[k] = leftArr[i];
-            i++;
+        while(l < leftLen) {
+            arr[k] = leftArr[l];
+            l++;
             k++;
         }
-        while (j < rightLen) {
-            nums[k] = rightArr[j];
-            j++;
+        while(r < rightLen) {
+            arr[k] = rightArr[r];
+            r++;
             k++;
         }
     }
+
 
     public static void main(String args[]) {
         int[] arr = {6, 5, 12, 10, 9, 1};

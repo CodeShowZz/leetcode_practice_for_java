@@ -22,22 +22,16 @@ public class DailyTemperatures_739 {
      * @return
      */
     public int[] dailyTemperatures(int[] temperatures) {
-        if (temperatures == null || temperatures.length == 0) {
-            return temperatures;
-        }
-        LinkedList<Integer> stack = new LinkedList<>();
-        int [] res = new int[temperatures.length];
-        for(int i = 0 ; i < temperatures.length;i++) {
-            if(stack.isEmpty()) {
-                stack.push(i);
-            } else {
-                while(!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()]) {
-                    int index = stack.peek();
-                    res[index] = i - index;
-                    stack.pop();
-                }
-                stack.push(i);
+        int len = temperatures.length;
+        int[] res = new int[len];
+        LinkedList<int[]> stack = new LinkedList<>();
+        stack.push(new int[]{0,temperatures[0]});
+        for(int i = 1 ; i < len; i++) {
+            while(!stack.isEmpty() && stack.peek()[1] < temperatures[i]) {
+                int [] pop = stack.pop();
+                res[pop[0]] = i - pop[0];
             }
+            stack.push(new int[]{i,temperatures[i]});
         }
         return res;
     }
