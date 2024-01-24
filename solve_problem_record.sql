@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50740
 File Encoding         : 65001
 
-Date: 2024-01-24 03:41:00
+Date: 2024-01-24 13:07:22
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -31,7 +31,7 @@ CREATE TABLE `problem_record` (
   `remark` varchar(255) DEFAULT '' COMMENT '备注',
   `importance` varchar(255) DEFAULT '' COMMENT '了解,理解,掌握',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=220 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=221 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of problem_record
@@ -190,14 +190,14 @@ INSERT INTO `problem_record` VALUES ('192', 'mysql', '6 索引下推', '中等',
 INSERT INTO `problem_record` VALUES ('193', 'mysql', '7 count(1),count(*),count(column)的区别', '简单', '1', '1', '2024-01-22 03:50:43', '2024-01-22 03:50:57', '', '理解');
 INSERT INTO `problem_record` VALUES ('194', 'java基础', '2 java异常', '简单', '1', '1', '2024-01-22 04:04:18', '2024-01-22 04:04:20', '', '掌握');
 INSERT INTO `problem_record` VALUES ('195', 'redis', '3 Redis分布式锁原理', '中等', '1', '1', '2024-01-22 05:35:58', '2024-01-22 05:35:58', '', '掌握');
-INSERT INTO `problem_record` VALUES ('196', 'redis', '4 为什么Redis使用16384个槽', '简单', '1', '1', '2024-01-22 05:41:29', '2024-01-22 05:41:32', '', '了解');
+INSERT INTO `problem_record` VALUES ('196', 'redis', '4 为什么Redis使用16384个槽', '简单', '1', '1', '2024-01-22 05:41:29', '2024-01-24 13:06:12', '不需要复习', '了解');
 INSERT INTO `problem_record` VALUES ('197', 'redis', '5 Redis为什么这么快', '简单', '1', '1', '2024-01-22 21:31:56', '2024-01-22 21:32:00', '', '了解');
-INSERT INTO `problem_record` VALUES ('198', 'redis', '6 Redis IO多路复用', '简单', '1', '1', '2024-01-22 21:32:14', '2024-01-22 21:32:23', '', '了解');
+INSERT INTO `problem_record` VALUES ('198', 'redis', '6 Redis IO多路复用', '简单', '1', '1', '2024-01-22 21:32:14', '2024-01-24 12:59:08', '不需要复习', '了解');
 INSERT INTO `problem_record` VALUES ('199', 'redis', '7 Redis和数据库的一致性', '中等', '1', '1', '2024-01-22 21:32:32', '2024-01-22 21:32:34', '', '掌握');
 INSERT INTO `problem_record` VALUES ('200', 'redis', '8 Redis缓存驱逐策略', '中等', '1', '1', '2024-01-22 21:32:41', '2024-01-22 21:32:54', '', '掌握');
 INSERT INTO `problem_record` VALUES ('201', 'redis', '9 Redis过期键删除策略', '简单', '1', '1', '2024-01-22 21:33:10', '2024-01-22 21:33:18', '', '理解');
 INSERT INTO `problem_record` VALUES ('202', 'redis', '10 缓存穿透,缓存击穿,缓存雪崩', '简单', '1', '1', '2024-01-22 21:33:26', '2024-01-22 21:33:38', '', '掌握');
-INSERT INTO `problem_record` VALUES ('203', 'redis', '11 持久化', '简单', '1', '1', '2024-01-22 21:33:46', '2024-01-22 21:33:52', '', '掌握');
+INSERT INTO `problem_record` VALUES ('203', 'redis', '11 持久化', '简单', '1', '1', '2024-01-22 21:33:46', '2024-01-24 12:59:19', '不需要复习', '掌握');
 INSERT INTO `problem_record` VALUES ('204', 'redis', '12 Redis Hot key Error', '中等', '1', '1', '2024-01-22 21:33:57', '2024-01-22 21:34:04', '', '理解');
 INSERT INTO `problem_record` VALUES ('205', 'mysql', '8 幻读', '简单', '1', '1', '2024-01-22 21:34:53', '2024-01-22 21:35:02', '', '掌握');
 INSERT INTO `problem_record` VALUES ('206', 'mysql', '9 索引失效', '中等', '1', '1', '2024-01-22 22:02:26', '2024-01-22 22:02:33', '', '掌握');
@@ -214,3 +214,4 @@ INSERT INTO `problem_record` VALUES ('216', 'spring', '7 Spring MVC的执行流�
 INSERT INTO `problem_record` VALUES ('217', 'spring', '8 Filter和Intercepotr的区别', '中等', '1', '1', '2024-01-24 03:08:00', '2024-01-24 03:10:21', '不需要复习', '理解');
 INSERT INTO `problem_record` VALUES ('218', 'spring', '9 动态代理', '中等', '1', '1', '2024-01-24 03:09:20', '2024-01-24 03:10:24', '不需要复习', '掌握');
 INSERT INTO `problem_record` VALUES ('219', '操作系统', '1 顺序IO和随机IO的区别', '简单', '1', '1', '2024-01-24 03:40:01', '2024-01-24 03:40:11', '不需要复习', '掌握');
+INSERT INTO `problem_record` VALUES ('220', '操作系统', '2 IO模型', '中等', '1', '1', '2024-01-24 04:18:26', '2024-01-24 04:18:42', '不需要复习', '掌握');
