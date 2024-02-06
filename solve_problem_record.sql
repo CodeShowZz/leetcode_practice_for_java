@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50740
 File Encoding         : 65001
 
-Date: 2024-01-24 13:07:22
+Date: 2024-02-06 08:53:54
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -31,7 +31,7 @@ CREATE TABLE `problem_record` (
   `remark` varchar(255) DEFAULT '' COMMENT '备注',
   `importance` varchar(255) DEFAULT '' COMMENT '了解,理解,掌握',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=221 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=239 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of problem_record
@@ -111,8 +111,8 @@ INSERT INTO `problem_record` VALUES ('107', '算法', '4.归并排序', '简单'
 INSERT INTO `problem_record` VALUES ('108', '算法', '5.堆排序', '简单', '1', '1', '2023-12-20 05:07:33', '2023-12-21 00:55:35', '', '掌握');
 INSERT INTO `problem_record` VALUES ('109', '算法', '6.快速排序', '简单', '1', '1', '2023-12-20 05:07:34', '2023-12-21 00:55:36', '', '掌握');
 INSERT INTO `problem_record` VALUES ('110', '算法', '7.跳表', '简单', '1', '1', '2023-12-20 05:09:16', '2023-12-21 00:55:39', '', '掌握');
-INSERT INTO `problem_record` VALUES ('111', 'redis', '1.SDS', '简单', '1', '1', '2023-12-20 05:09:37', '2023-12-21 00:55:45', '', '了解');
-INSERT INTO `problem_record` VALUES ('112', 'redis', '2.Redis字典实现原理', '中等', '1', '1', '2023-12-20 05:11:01', '2023-12-21 00:55:48', '', '了解');
+INSERT INTO `problem_record` VALUES ('111', 'redis', '1.SDS', '简单', '1', '1', '2023-12-20 05:09:37', '2024-01-26 00:32:05', '不需要复习', '了解');
+INSERT INTO `problem_record` VALUES ('112', 'redis', '2.Redis字典实现原理', '中等', '1', '1', '2023-12-20 05:11:01', '2024-01-26 00:32:05', '不需要复习', '了解');
 INSERT INTO `problem_record` VALUES ('115', 'leetcode', '152. 乘积最大子数组\r\n', '中等', '3', '1', '2023-12-20 23:01:36', '2024-01-14 02:06:34', '', '掌握');
 INSERT INTO `problem_record` VALUES ('116', 'leetcode', '198. 打家劫舍\r\n', '中等', '2', '1', '2023-12-20 23:21:04', '2024-01-03 00:02:44', '', '掌握');
 INSERT INTO `problem_record` VALUES ('117', 'jvm', '7.并发的可达性分析', '中等', '1', '1', '2023-12-20 23:21:12', '2023-12-21 01:15:53', '', '了解');
@@ -171,7 +171,7 @@ INSERT INTO `problem_record` VALUES ('173', 'jvm', '19 双亲委派模型', '中
 INSERT INTO `problem_record` VALUES ('174', 'leetcode', '301. 删除无效的括号', '困难', '1', '0', '2024-01-20 13:38:21', '2024-01-20 13:38:29', '', '掌握');
 INSERT INTO `problem_record` VALUES ('175', 'jvm', '14 类加载机制', '中等', '1', '1', '2024-01-20 23:45:44', '2024-01-20 23:45:51', '', '理解');
 INSERT INTO `problem_record` VALUES ('176', 'jvm', '20 jstack', '简单', '1', '1', '2024-01-20 23:46:59', '2024-01-20 23:47:04', '', '掌握');
-INSERT INTO `problem_record` VALUES ('177', 'mysql', '1. mysql数据存储方式', '简单', '1', '1', '2024-01-20 23:58:25', '2024-01-20 23:58:55', '', '理解');
+INSERT INTO `problem_record` VALUES ('177', 'mysql', '1. mysql数据存储方式', '简单', '1', '1', '2024-01-20 23:58:25', '2024-01-27 04:56:23', '不需要复习', '理解');
 INSERT INTO `problem_record` VALUES ('178', '计算机网络', '3 HTTP2.0', '中等', '1', '1', '2024-01-21 00:35:51', '2024-01-21 00:35:58', '', '掌握');
 INSERT INTO `problem_record` VALUES ('179', '计算机网络', '4 一个HTTP请求,中间发生了什么', '简单', '1', '1', '2024-01-21 00:40:35', '2024-01-21 00:40:45', '', '掌握');
 INSERT INTO `problem_record` VALUES ('180', '计算机网络', '5 HTTP0.9 1.0 1.1 2.0 3.0的区别', '简单', '1', '1', '2024-01-21 01:55:28', '2024-01-21 01:55:34', '', '掌握');
@@ -182,23 +182,23 @@ INSERT INTO `problem_record` VALUES ('184', '并发', '7 synchronized的原理',
 INSERT INTO `problem_record` VALUES ('185', '并发', '8 CAS原理', '中等', '1', '1', '2024-01-22 00:16:01', '2024-01-22 00:16:11', '', '掌握');
 INSERT INTO `problem_record` VALUES ('186', '并发', '9 多生产者多消费者问题', '中等', '1', '1', '2024-01-22 00:17:23', '2024-01-22 00:17:28', '', '掌握');
 INSERT INTO `problem_record` VALUES ('187', '并发', '10 Synchronized和ReentrantLock的区别', '简单', '1', '1', '2024-01-22 00:38:19', '2024-01-22 00:38:29', '', '理解');
-INSERT INTO `problem_record` VALUES ('188', 'mysql', '2 MVCC原理', '中等', '1', '1', '2024-01-22 01:29:11', '2024-01-22 01:29:16', '', '掌握');
-INSERT INTO `problem_record` VALUES ('189', 'mysql', '3 Innodb vs myisam', '简单', '1', '1', '2024-01-22 01:29:35', '2024-01-22 01:29:35', '', '了解');
+INSERT INTO `problem_record` VALUES ('188', 'mysql', '2 MVCC原理', '中等', '1', '1', '2024-01-22 01:29:11', '2024-01-27 16:14:26', '不需要复习', '掌握');
+INSERT INTO `problem_record` VALUES ('189', 'mysql', '3 Innodb vs myisam', '简单', '1', '1', '2024-01-22 01:29:35', '2024-01-27 16:25:43', '不需要复习', '了解');
 INSERT INTO `problem_record` VALUES ('190', 'mysql', '4 mysql排序原理', '中等', '1', '1', '2024-01-22 03:35:37', '2024-01-22 03:35:37', '', '理解');
 INSERT INTO `problem_record` VALUES ('191', 'mysql', '5 Shading-JDBC分片策略', '简单', '1', '1', '2024-01-22 03:39:53', '2024-01-22 03:40:02', '', '了解');
 INSERT INTO `problem_record` VALUES ('192', 'mysql', '6 索引下推', '中等', '1', '1', '2024-01-22 03:47:21', '2024-01-22 03:47:26', '', '掌握');
 INSERT INTO `problem_record` VALUES ('193', 'mysql', '7 count(1),count(*),count(column)的区别', '简单', '1', '1', '2024-01-22 03:50:43', '2024-01-22 03:50:57', '', '理解');
 INSERT INTO `problem_record` VALUES ('194', 'java基础', '2 java异常', '简单', '1', '1', '2024-01-22 04:04:18', '2024-01-22 04:04:20', '', '掌握');
-INSERT INTO `problem_record` VALUES ('195', 'redis', '3 Redis分布式锁原理', '中等', '1', '1', '2024-01-22 05:35:58', '2024-01-22 05:35:58', '', '掌握');
+INSERT INTO `problem_record` VALUES ('195', 'redis', '3 Redis分布式锁原理', '中等', '1', '1', '2024-01-22 05:35:58', '2024-01-26 00:32:06', '不需要复习', '掌握');
 INSERT INTO `problem_record` VALUES ('196', 'redis', '4 为什么Redis使用16384个槽', '简单', '1', '1', '2024-01-22 05:41:29', '2024-01-24 13:06:12', '不需要复习', '了解');
-INSERT INTO `problem_record` VALUES ('197', 'redis', '5 Redis为什么这么快', '简单', '1', '1', '2024-01-22 21:31:56', '2024-01-22 21:32:00', '', '了解');
+INSERT INTO `problem_record` VALUES ('197', 'redis', '5 Redis为什么这么快', '简单', '1', '1', '2024-01-22 21:31:56', '2024-01-26 00:32:07', '不需要复习', '了解');
 INSERT INTO `problem_record` VALUES ('198', 'redis', '6 Redis IO多路复用', '简单', '1', '1', '2024-01-22 21:32:14', '2024-01-24 12:59:08', '不需要复习', '了解');
-INSERT INTO `problem_record` VALUES ('199', 'redis', '7 Redis和数据库的一致性', '中等', '1', '1', '2024-01-22 21:32:32', '2024-01-22 21:32:34', '', '掌握');
-INSERT INTO `problem_record` VALUES ('200', 'redis', '8 Redis缓存驱逐策略', '中等', '1', '1', '2024-01-22 21:32:41', '2024-01-22 21:32:54', '', '掌握');
-INSERT INTO `problem_record` VALUES ('201', 'redis', '9 Redis过期键删除策略', '简单', '1', '1', '2024-01-22 21:33:10', '2024-01-22 21:33:18', '', '理解');
-INSERT INTO `problem_record` VALUES ('202', 'redis', '10 缓存穿透,缓存击穿,缓存雪崩', '简单', '1', '1', '2024-01-22 21:33:26', '2024-01-22 21:33:38', '', '掌握');
+INSERT INTO `problem_record` VALUES ('199', 'redis', '7 Redis和数据库的一致性', '中等', '1', '1', '2024-01-22 21:32:32', '2024-01-26 00:32:09', '不需要复习', '掌握');
+INSERT INTO `problem_record` VALUES ('200', 'redis', '8 Redis缓存驱逐策略', '中等', '1', '1', '2024-01-22 21:32:41', '2024-01-26 00:47:24', '不需要复习', '掌握');
+INSERT INTO `problem_record` VALUES ('201', 'redis', '9 Redis过期键删除策略', '简单', '1', '1', '2024-01-22 21:33:10', '2024-01-25 13:10:27', '不需要复习', '理解');
+INSERT INTO `problem_record` VALUES ('202', 'redis', '10 缓存穿透,缓存击穿,缓存雪崩', '简单', '1', '1', '2024-01-22 21:33:26', '2024-01-26 00:56:37', '不需要复习', '掌握');
 INSERT INTO `problem_record` VALUES ('203', 'redis', '11 持久化', '简单', '1', '1', '2024-01-22 21:33:46', '2024-01-24 12:59:19', '不需要复习', '掌握');
-INSERT INTO `problem_record` VALUES ('204', 'redis', '12 Redis Hot key Error', '中等', '1', '1', '2024-01-22 21:33:57', '2024-01-22 21:34:04', '', '理解');
+INSERT INTO `problem_record` VALUES ('204', 'redis', '12 Redis Hot key Error', '中等', '1', '1', '2024-01-22 21:33:57', '2024-01-26 00:50:55', '不需要复习', '理解');
 INSERT INTO `problem_record` VALUES ('205', 'mysql', '8 幻读', '简单', '1', '1', '2024-01-22 21:34:53', '2024-01-22 21:35:02', '', '掌握');
 INSERT INTO `problem_record` VALUES ('206', 'mysql', '9 索引失效', '中等', '1', '1', '2024-01-22 22:02:26', '2024-01-22 22:02:33', '', '掌握');
 INSERT INTO `problem_record` VALUES ('207', '算法', '8 一致性hash原理', '中等', '1', '1', '2024-01-22 22:03:51', '2024-01-22 22:03:56', '', '掌握');
@@ -215,3 +215,21 @@ INSERT INTO `problem_record` VALUES ('217', 'spring', '8 Filter和Intercepotr的
 INSERT INTO `problem_record` VALUES ('218', 'spring', '9 动态代理', '中等', '1', '1', '2024-01-24 03:09:20', '2024-01-24 03:10:24', '不需要复习', '掌握');
 INSERT INTO `problem_record` VALUES ('219', '操作系统', '1 顺序IO和随机IO的区别', '简单', '1', '1', '2024-01-24 03:40:01', '2024-01-24 03:40:11', '不需要复习', '掌握');
 INSERT INTO `problem_record` VALUES ('220', '操作系统', '2 IO模型', '中等', '1', '1', '2024-01-24 04:18:26', '2024-01-24 04:18:42', '不需要复习', '掌握');
+INSERT INTO `problem_record` VALUES ('221', 'redis', '13 复制', '中等', '1', '1', '2024-01-25 13:10:36', '2024-01-26 01:18:51', '不需要复习', '掌握');
+INSERT INTO `problem_record` VALUES ('222', 'redis', '14 集群', '中等', '1', '1', '2024-01-25 13:10:36', '2024-01-26 01:18:51', '不需要复习', '掌握');
+INSERT INTO `problem_record` VALUES ('223', 'redis', '15 哨兵', '中等', '1', '1', '2024-01-25 13:10:53', '2024-01-26 01:18:51', '不需要复习', '掌握');
+INSERT INTO `problem_record` VALUES ('224', '操作系统', '3 进程间通信', '中等', '1', '1', '2024-01-25 13:30:59', '2024-01-25 13:31:06', '不需要复习', '理解');
+INSERT INTO `problem_record` VALUES ('225', '操作系统', '4 select,poll,epoll的区别', '中等', '1', '1', '2024-01-26 03:09:36', '2024-01-26 03:09:46', '不需要复习', '理解');
+INSERT INTO `problem_record` VALUES ('226', '操作系统', '5 内核态和用户态的区别', '简单', '1', '1', '2024-01-26 03:21:09', '2024-01-26 03:21:17', '不需要复习', '掌握');
+INSERT INTO `problem_record` VALUES ('227', '操作系统', '6 零拷贝', '中等', '1', '1', '2024-01-27 01:06:16', '2024-01-27 01:06:23', '不需要复习', '掌握');
+INSERT INTO `problem_record` VALUES ('228', '算法', '9 优先级队列', '中等', '1', '1', '2024-01-27 01:12:54', '2024-01-27 01:13:02', '不需要复习', '掌握');
+INSERT INTO `problem_record` VALUES ('229', '方案设计', '1 限流算法', '中等', '1', '1', '2024-01-27 01:21:48', '2024-01-27 01:21:54', '不需要复习', '掌握');
+INSERT INTO `problem_record` VALUES ('230', '方案设计', '2 如何使用Redis实现一个延迟队列', '中等', '1', '1', '2024-01-27 01:22:03', '2024-01-27 01:22:12', '不需要复习', '掌握');
+INSERT INTO `problem_record` VALUES ('231', '方案设计', '3 秒杀设计', '中等', '1', '1', '2024-01-27 01:41:44', '2024-01-27 01:41:50', '不需要复习', '理解');
+INSERT INTO `problem_record` VALUES ('232', 'mysql', '12 Innodb中有哪些锁', '简单', '1', '1', '2024-01-27 02:13:12', '2024-01-27 02:13:22', '不需要复习', '掌握');
+INSERT INTO `problem_record` VALUES ('233', 'mysql', '13 如何正确的使用分页', '中等', '1', '1', '2024-01-27 02:50:08', '2024-01-27 02:50:09', '不需要复习', '掌握');
+INSERT INTO `problem_record` VALUES ('234', 'mysql', '14 mysql复制原理', '中等', '1', '1', '2024-01-27 04:11:24', '2024-01-27 04:11:31', '不需要复习', '理解');
+INSERT INTO `problem_record` VALUES ('235', 'mysql', '15 explain', '中等', '1', '1', '2024-01-27 04:53:54', '2024-01-27 04:54:00', '不需要复习', '理解');
+INSERT INTO `problem_record` VALUES ('236', '算法', '10 红黑树', '中等', '1', '1', '2024-01-27 16:44:48', '2024-01-27 16:45:08', '不需要复习', '掌握');
+INSERT INTO `problem_record` VALUES ('237', '算法', '11 B树和B+树', '中等', '1', '1', '2024-01-27 17:13:46', '2024-01-27 17:14:02', '不需要复习', '掌握');
+INSERT INTO `problem_record` VALUES ('238', '分布式', '1 2PC和3PC', '困难', '1', '1', '2024-01-27 17:35:57', '2024-01-27 17:36:02', '不需要复习', '理解');
